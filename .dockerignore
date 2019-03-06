@@ -1,0 +1,3 @@
+# don't include .git things in the image
+.git
+.gitignore
