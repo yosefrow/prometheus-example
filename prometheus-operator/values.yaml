@@ -171,7 +171,7 @@ alertmanager:
     loadBalancerSourceRanges: []
     ## Service type
     ##
-    type: ClusterIP
+    type: NodePort
 
   ## If true, create a serviceMonitor for alertmanager
   ##
@@ -612,9 +612,9 @@ prometheusOperator:
     loadBalancerSourceRanges: []
 
   ## Service type
-  ## NodepPort, ClusterIP, loadbalancer
+  ## NodePort, ClusterIP, loadbalancer
   ##
-    type: ClusterIP
+    type: NodePort
 
     ## List of IP addresses at which the Prometheus server service is available
     ## Ref: https://kubernetes.io/docs/user-guide/services/#external-ips
@@ -765,7 +765,7 @@ prometheus:
     loadBalancerSourceRanges: []
     ## Service type
     ##
-    type: ClusterIP
+    type: NodePort
 
     sessionAffinity: ""
 
