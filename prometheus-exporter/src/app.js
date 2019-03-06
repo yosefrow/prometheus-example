@@ -77,7 +77,12 @@ if (cluster.isWorker) {
 client.collectDefaultMetrics();
 
 // set express routes
-server.get('/', (req, res) => res.send('<h1>Hello World!</h1><br /><p>This is a sample nodejs app running on port: ' + port +'</p><br /><p> View metrics <a href=/metrics>here</a> </p>'));
+
+var samplePage = '<h1>Sample "Hello, World" Application</h1><br /><p>This is a sample nodejs app running on port: ' + port +'</p><br /><p> View metrics <a href=/metrics>here</a> </p>';
+
+
+server.get('/', (req, res) => res.send(samplePage));
+server.get('/sample', (req, res) => res.send(samplePage));
 
 server.get('/metrics', (req, res) => {
 	res.set('Content-Type', register.contentType);
