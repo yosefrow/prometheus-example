@@ -171,7 +171,7 @@ alertmanager:
     loadBalancerSourceRanges: []
     ## Service type
     ##
-    type: NodePort
+    type: LoadBalancer
 
   ## If true, create a serviceMonitor for alertmanager
   ##
@@ -310,8 +310,8 @@ grafana:
   ## Deploy default dashboards.
   ##
   defaultDashboardsEnabled: true
-
-  adminPassword: prom-operator
+  adminUser: admin
+  adminPassword: strongpassword
 
   ingress:
     ## If true, Prometheus Ingress will be created
@@ -366,6 +366,9 @@ grafana:
     create: false
     pspEnabled: false
     pspUseAppArmor: false
+
+  service:
+    type: LoadBalancer
 
 ## Component scraping the kube api server
 ##
@@ -614,7 +617,7 @@ prometheusOperator:
   ## Service type
   ## NodePort, ClusterIP, loadbalancer
   ##
-    type: NodePort
+    type: LoadBalancer
 
     ## List of IP addresses at which the Prometheus server service is available
     ## Ref: https://kubernetes.io/docs/user-guide/services/#external-ips
@@ -765,7 +768,7 @@ prometheus:
     loadBalancerSourceRanges: []
     ## Service type
     ##
-    type: NodePort
+    type: LoadBalancer
 
     sessionAffinity: ""
 
