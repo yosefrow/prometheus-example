@@ -1,3 +1,11 @@
+/*******************************
+* Maintainer: yosefrow@gmail.com
+*
+* Credit: https://github.com/siimon/prom-client/blob/master/example/server.js
+* Date: 06.03.2019
+*
+*******************************/
+
 'use strict';
 
 // define express vars
@@ -35,7 +43,6 @@ const g = new Gauge({
 });
 
 // Populate Sample metrics objects
-
 setTimeout(() => {
 	h.labels('200').observe(Math.random());
 	h.labels('300').observe(Math.random());
